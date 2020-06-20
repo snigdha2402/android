@@ -15,20 +15,25 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     Button nwuser;
     Button login;
-    EditText eid;
+    EditText eid,pass;
     TextView tevi;
-    String URL = "https://cosc-team-14-restapi.herokuapp.com/";
+    String key_empid="EMPID";
+    String key_pass="PASS";
+    String empid;
+    String passwrd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         eid = (EditText) findViewById(R.id.empid);
+        pass=(EditText) findViewById(R.id.password);
         tevi = (TextView) findViewById(R.id.textView9);
         nwuser = (Button) findViewById(R.id.newuser);
         nwuser.setOnClickListener(new View.OnClickListener() {
@@ -39,14 +44,11 @@ public class MainActivity extends AppCompatActivity {
         });
         login = (Button) findViewById(R.id.login);
 
+
     }
     public void newuser(){
         Intent intent = new Intent(this, Main2Activity.class);
         startActivity(intent);
     }
-    public void login(){
 
-            Intent intent = new Intent(this, firstpg.class);
-            startActivity(intent);
-    }
 }
