@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -97,13 +98,15 @@ public class Main2Activity extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.e("rest response", response.toString());
+                        Toast toast = Toast.makeText(getApplicationContext(),"registration successful!",Toast.LENGTH_LONG);
+                        toast.show();
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.e("rest response", error.toString());
+                        Toast toast = Toast.makeText(getApplicationContext(),"ERROR!!",Toast.LENGTH_LONG);
+                        toast.show();
                     }
                 });
 
