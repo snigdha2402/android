@@ -98,15 +98,13 @@ public class Main2Activity extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Toast toast = Toast.makeText(getApplicationContext(),"registration successful!",Toast.LENGTH_LONG);
-                        toast.show();
+                        Log.e("rest response", response.toString());
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast toast = Toast.makeText(getApplicationContext(),"ERROR!!",Toast.LENGTH_LONG);
-                        toast.show();
+                        Log.e("rest response", error.toString());
                     }
                 });
 

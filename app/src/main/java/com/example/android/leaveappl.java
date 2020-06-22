@@ -3,6 +3,7 @@ package com.example.android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -82,15 +83,13 @@ public class leaveappl extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Toast toast = Toast.makeText(getApplicationContext(),"leave applied!",Toast.LENGTH_LONG);
-                        toast.show();
+                        Log.e("rest response", response.toString());
                     }
                 },
                 new Response.ErrorListener(){
                   @Override
                     public void onErrorResponse(VolleyError error){
-                      Toast toast = Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_LONG);
-                      toast.show();
+                      Log.e("rest response", error.toString());
                   }
                 });
 
