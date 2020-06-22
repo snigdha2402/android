@@ -23,10 +23,10 @@ public class MainActivity extends AppCompatActivity {
     Button login;
     EditText eid,pass;
     TextView tevi;
-    String key_empid="EMPID";
-    String key_pass="PASS";
     String empid;
     String passwrd;
+    String URL = "https://cosc-team-14-restapi.herokuapp.com/emp_register";
+    RequestQueue queue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +44,20 @@ public class MainActivity extends AppCompatActivity {
         });
         login = (Button) findViewById(R.id.login);
 
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 login();
+            }
+        });
+
 
     }
     public void newuser(){
         Intent intent = new Intent(this, Main2Activity.class);
         startActivity(intent);
     }
+    public void login(){
 
+    }
 }

@@ -24,15 +24,9 @@ public class Main2Activity extends AppCompatActivity {
 
     Button register;
     EditText empid,empname,deptno,desig,emailid,contact,address,pass,noleaves;
+
     RequestQueue queue;
     JsonObjectRequest objectRequest;
-    String key_empid="EMPID";
-    String key_pass="PASS";
-    String key_ename="EMPNAME",key_dpt="DEPTNO",key_pno="CONTACT",key_email="EMAIL",key_addr="ADDRESS",key_lev="NOLEAVES",
-           key_desg="DESG";
-
-    String emp_id;
-    String passwrd,ename,dpt,pno,email,addr,lev,desg;
     JSONObject data;
     String URL = "https://cosc-team-14-restapi.herokuapp.com/emp_register";
 
@@ -71,25 +65,17 @@ public class Main2Activity extends AppCompatActivity {
     }
 
     public void userregister() throws JSONException {
-        emp_id=empid.getText().toString();
-        ename=empname.getText().toString();
-        dpt=deptno.getText().toString();
-        desg=desig.getText().toString();
-        email=emailid.getText().toString();
-        pno=contact.getText().toString();
-        addr=address.getText().toString();
-        passwrd=pass.getText().toString();
-        lev=noleaves.getText().toString();
+
         data = new JSONObject();
-        data.put(key_empid,emp_id);
-        data.put(key_ename,ename);
-        data.put(key_dpt,dpt);
-        data.put(key_desg,desg);
-        data.put(key_email,email);
-        data.put(key_pno,pno);
-        data.put(key_addr,addr);
-        data.put(key_pass,passwrd);
-        data.put(key_lev,lev);
+        data.put("EMPID",empid.getText().toString());
+        data.put("EMPNAME",empname.getText().toString());
+        data.put("DEPTNO",deptno.getText().toString());
+        data.put("DESG",desig.getText().toString());
+        data.put("EMAIL",emailid.getText().toString());
+        data.put("CONTACT",contact.getText().toString());
+        data.put("ADDRESS",address.getText().toString());
+        data.put("PASS",pass.getText().toString());
+        data.put("NOLEAVES",noleaves.getText().toString());
 
         queue= Volley.newRequestQueue(this);
         objectRequest = new JsonObjectRequest(Request.Method.POST,

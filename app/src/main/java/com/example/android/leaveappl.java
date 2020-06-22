@@ -25,9 +25,7 @@ public class leaveappl extends AppCompatActivity {
     Button apply;
     EditText empid,title,stdate,endate,days,reas;
     CheckBox emg;
-    String emplid,titl,stadt,enddt,nodays,reason,emerg;
-    String key_empid="EMPID",key_titl="LEAVETITLE",key_sta="STDATE",key_end="ENDDATE",
-            key_days="NOOFDAYS",key_rea="REASON",key_emg="EMGLEAVE";
+
     RequestQueue queue;
     JsonObjectRequest objectRequest;
     String URL="https://cosc-team-14-restapi.herokuapp.com/empleave";
@@ -59,22 +57,16 @@ public class leaveappl extends AppCompatActivity {
 
     }
     public void applyleave() throws JSONException {
-        emplid=empid.getText().toString();
-        titl=title.getText().toString();
-        reason=reas.getText().toString();
-        stadt=stdate.getText().toString();
-        enddt=endate.getText().toString();
-        nodays=days.getText().toString();
-        emerg=emg.getText().toString();
+
 
         JSONObject data = new JSONObject();
-        data.put(key_empid,emplid);
-        data.put(key_titl,titl);
-        data.put(key_rea,reason);
-        data.put(key_sta,stadt);
-        data.put(key_end,enddt);
-        data.put(key_days,nodays);
-        data.put(key_emg,emerg);
+        data.put("EMPID",empid.getText().toString());
+        data.put("LEAVETITLE",title.getText().toString());
+        data.put("REASON",reas.getText().toString());
+        data.put("STDATE",stdate.getText().toString());
+        data.put("ENDDATE",endate.getText().toString());
+        data.put("NOOFDAYS",days.getText().toString());
+        data.put("EMGLEAVE",emg.getText().toString());
 
         queue= Volley.newRequestQueue(this);
         objectRequest = new JsonObjectRequest(Request.Method.POST,
