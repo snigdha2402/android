@@ -19,10 +19,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
-    Button nwuser;
+    TextView nwuser;
     Button login;
     EditText eid,pass;
-    TextView tevi;
+
     String empid;
     String passwrd;
     String URL = "https://cosc-team-14-restapi.herokuapp.com/emp_register";
@@ -34,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         eid = (EditText) findViewById(R.id.empid);
         pass=(EditText) findViewById(R.id.password);
-        tevi = (TextView) findViewById(R.id.textView9);
-        nwuser = (Button) findViewById(R.id.newuser);
+        nwuser = (TextView) findViewById(R.id.newuser);
         nwuser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

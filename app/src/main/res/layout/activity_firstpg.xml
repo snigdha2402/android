@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".firstpg">
+    tools:context=".firstpg"
+    android:background="@color/background_color">
 
     <TextView
         android:id="@+id/leaves"
@@ -12,6 +13,7 @@
         android:layout_height="72dp"
         android:gravity="center"
         android:text="number of leaves remaining"
+        android:textColor="@color/white"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,6 +28,7 @@
         android:layout_height="82dp"
         android:gravity="center"
         android:text="-"
+        android:textColor="@color/white"
         android:textSize="20pt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,6 +41,8 @@
         android:layout_width="247dp"
         android:layout_height="68dp"
         android:text="check leave history"
+        android:textColor="#009688"
+        android:background="@drawable/loginbutton_selector"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -50,6 +55,8 @@
         android:layout_width="247dp"
         android:layout_height="68dp"
         android:text="apply for new leave"
+        android:textColor="#009688"
+        android:background="@drawable/loginbutton_selector"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,6 +68,8 @@
         android:layout_width="245dp"
         android:layout_height="65dp"
         android:text="VIEW PROFILE"
+        android:textColor="#009688"
+        android:background="@drawable/loginbutton_selector"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
