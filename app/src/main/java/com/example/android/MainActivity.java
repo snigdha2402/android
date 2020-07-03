@@ -56,14 +56,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if( eid.getText().toString().equals("1234") &&  pass.getText().toString().equals("pass"))
-                { login();}
-              /*  try {
+
+                try {
                     login();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                queue.add(objectRequest); */
+                queue.add(objectRequest);
             }
         });
 
@@ -73,10 +72,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Main2Activity.class);
         startActivity(intent);
     }
-    public void login()  {
-         Intent intent = new Intent(this, firstpg.class);
-         startActivity(intent);
-     /*   j = new JSONObject();
+    public void login() throws JSONException {
+       //  Intent intent = new Intent(this, firstpg.class);
+       //  startActivity(intent);
+        j = new JSONObject();
             j.put("EMPID", eid.getText().toString());
             j.put("PASS", pass.getText().toString());
 
@@ -107,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 params.put("Authorization", auth);
                 return params;
             }
-        }; */
+        };
 
     }
 }
